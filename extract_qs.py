@@ -7,9 +7,11 @@ df = df[['type', 'question']]
 print(df.shape)
 assert df.shape[0] % 3==0
 
-n_qs = df.shape[0]//3
 
-models = ['gpt4','claude3', 'llama3']
+
+models = ['deepseek']
+
+n_qs = df.shape[0]//len(models)
 all_models = []
 for q_id in range(n_qs):
     random.shuffle(models)
